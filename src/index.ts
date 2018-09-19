@@ -5,8 +5,14 @@ import { plugin } from "hapi-auth-basic";
 // import { validate, options } from "joi";
 // import { request } from "https";
 const server = new Server({
-    port : "5000"
+    port : "5000",
+    routes: {
+        cors: {
+            origin: ["*"]
+        }
+    }
 });
+
 // แบบที่ 1
 // server.register(new ProductPlugin(),{routes:{prefix:"/product"} })
 // .then(() =>{
